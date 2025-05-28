@@ -1,0 +1,62 @@
+site_name: Common Data Model (CDM)
+repo_url: https://github.com/SAP/common-data-model
+site_url: https://pages.github.com/SAP/common-data-model
+theme:
+  #custom_dir: docs/overrides
+  name: material
+  favicon: assets/images/favicon.ico
+  #icon:
+  #  logo: fontawesome/solid/layer-group
+  palette:
+    primary: custom
+  features:
+      - navigation.sections # Top-level sections are rendered as groups
+      - navigation.tracking # keeps url in browser address bar in sync with any active anchor
+
+      - navigation.tabs  # renders top level tabs
+      - navigation.tabs.sticky  # sticky keeps tabs when scrolling downwards
+
+      - navigation.top # renders a back to top button   
+      - navigation.expand # the left sidebar will expand all collapsible subsections by default
+      - navigation.footer # adds a footer navigation to move to the previous and next page
+
+      - content.tabs.link # allows to link to a specific tab / code blocks
+      - content.action.edit # renders an edit button in the right corner of the page
+      - content.code.annotate # allows to import code snippets from files
+      - content.code.copy # allows to copy code snippets to clipboard
+      - search.highlight # highlights the search results
+extra_css:
+  - "docs/css/extra.css"
+plugins:
+    - search
+    - include_dir_to_nav: # allows to include directories in the navigation, without specifying the individual files
+        sort_file: true
+        sort_directory: true
+    - glightbox:
+        touchNavigation: false
+        loop: false
+        effect: zoom
+        width: 100%
+        height: auto
+        zoomable: true
+        draggable: false
+    - git-revision-date-localized
+    
+markdown_extensions:
+    - abbr # required to support for central abbreviations
+    - admonition # required for collapsible admonitions
+    - attr_list # required fo providing size of images {width=100px}  https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
+    - md_in_html
+    - footnotes #required for footnotes
+    - pymdownx.details # required for collapsible admonitions
+    - pymdownx.tabbed: # required for tabs, e.g. showing multiple source code snippets in different languages
+        alternate_style: true  
+    - pymdownx.superfences # Required for code snippets highlighting
+    - pymdownx.snippets: # Required to embedd reusable markdown snippets, See: https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
+        auto_append:
+           - includes/abbreviations.md # Adds a tooltip to all abbreviations
+
+nav:
+  - Home: index.md
+  - How-to Guides: ./how-tos/
+  - FAQs: terms/faq.md
