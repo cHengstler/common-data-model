@@ -1,8 +1,11 @@
 site_name: Common Data Model (CDM)
 repo_url: https://github.com/SAP/common-data-model
 site_url: https://pages.github.com/SAP/common-data-model
+edit_uri: ./edit/main/docs
+copyright: "© Copyright 2025, SAP SE. All rights reserved."
+
 theme:
-  #custom_dir: docs/overrides
+  custom_dir: docs/mkdocs/overrides
   name: material
   favicon: assets/images/favicon.ico
   #icon:
@@ -26,7 +29,7 @@ theme:
       - content.code.copy # allows to copy code snippets to clipboard
       - search.highlight # highlights the search results
 extra_css:
-  - "docs/css/extra.css"
+  - "mkdocs/stylesheets/extra.css"
 plugins:
     - search
     - include_dir_to_nav: # allows to include directories in the navigation, without specifying the individual files
@@ -58,5 +61,5 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - How-to Guides: ./how-tos/
+  - How-to Guides: how-tos/
   - FAQs: terms/faq.md
